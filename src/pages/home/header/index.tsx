@@ -2,14 +2,13 @@ import JoinBtn from "./joinBtn";
 import Search from "./search";
 import { ReactComponent as Logo } from "../../../assets/logoHome1.svg"
 import { Container, Row, Col } from "reactstrap";
-import { useState } from "react";
+
 
 export default function Header() {
-    const [activeModal, setActiveModal] = useState(false)
 
     return (
         <div className='header'>
-            <Container fluid className="my-2">
+            <Container fluid className="pt-2">
                 <Row className="align-items-center">
                     <Col md='1'>
                         <Logo></Logo>
@@ -18,7 +17,7 @@ export default function Header() {
                         <Search></Search>
                     </Col>
                     <Col className="align-right">
-                        <JoinBtn active={activeModal} setActive={setActiveModal}></JoinBtn>
+                        <JoinBtn></JoinBtn>
                     </Col>
                 </Row>
             </Container>

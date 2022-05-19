@@ -1,10 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Col, Container, Form, FormGroup, Input, Modal, Row } from "reactstrap"
 
 
 
 export default function SignUp() {
-    const dispatch = useDispatch()
     const active = useSelector(((state: any) => state.modals.signUp))
     console.log(active)
     return (
