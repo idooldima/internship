@@ -1,6 +1,6 @@
-import { Modal } from "./types";
+import { Modal } from './types';
 
 export default {
-    signUp: false,
-    signIn: false,
+  signUp: false,
+  signIn: false,
 } as Modal;

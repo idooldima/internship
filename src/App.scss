@@ -1,65 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-.header {
-  background: #fafafa;
-  margin-bottom: 0px !important
-}
-
-
-.Join-btn {
-  background-color: #009E7F;
-  border-color: #009E7F;
-
-}
-
 .align-center {
-  text-align: center
+  text-align: center;
 }
 
 .align-right {
-  text-align: right
-}
-
-
-form {
-  position: relative;
-}
-
-.input-search {
-  padding-left: 44px;
-  background-color: #F3F3F3;
-  border: none;
-
-}
-
-.head-text {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 45px;
-  line-height: 68px;
-  color: #0D1136;
-}
-
-
-
-.text {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 23px;
-  color: #77798C;
-}
-
-.main-article {
-  background-image: url("../src/assets/mainGrocery.svg");
-  background-size: cover;
-  height: 1070px;
-  background-repeat: no-repeat;
-}
-
-.vector-search {
-  position: absolute;
-  left: 14px;
-  top: 11px;
+  text-align: right;
 }

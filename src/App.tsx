@@ -1,20 +1,20 @@
-import React from 'react';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-
-
+import { Route, Routes } from 'react-router-dom';
 import './App.scss';
 import Home from './pages/home';
-import SignUp from './pages/home/auth/signUp';
-import Header from './pages/home/header';
-import Main from './pages/home/main';
+import SignIn from './pages/home/auth/signIn/signIn.component';
+import SignUp from './pages/home/auth/signUp/signUp.component';
+import Header from './pages/home/header/header.component';
 
 function App() {
   return (
-    <div className="App"  >
-      {/* <Header></Header> */}
-      {/* <Main></Main> */}
-      <Home></Home>
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="*" element={<div>404!!!</div>} />
+        <Route path="/" element={<Home />} />
+      </Routes>
       <SignUp></SignUp>
+      <SignIn></SignIn>
     </div>
   );
 }

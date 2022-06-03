@@ -1,6 +1,6 @@
 export type Modal = {
-    signUp: boolean;
-    signIn: boolean;
-}
+  signUp: boolean;
+  signIn: boolean;
+};
 
-export type ModalTypes = 'signIn' | 'signUp'
+export type ModalTypes = 'signIn' | 'signUp';

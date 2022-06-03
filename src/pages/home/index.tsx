@@ -1,13 +1,9 @@
-
-import Header from "./header";
-import Main from "./main";
+import Main from './main/main.component';
 
 export default function Home() {
-
-    return (
-        <div>
-            <Header></Header>
-            <Main></Main>
-        </div>
-    )
+  return (
+    <div>
+      <Main />
+    </div>
+  );
 }
