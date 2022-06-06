@@ -41,6 +41,7 @@ form {
   background: #4267b2;
   border-radius: 6px;
   text-align: center;
+  height: 48px;
   width: 100%;
   border: none;
 }
@@ -49,8 +50,22 @@ form {
   background: #4286f4;
   border-radius: 6px;
   text-align: center;
+  height: 48px;
   width: 100%;
   border: none;
+  padding-right: 25px;
+}
+
+.auth-ico-facebook {
+  position: absolute;
+  left: 85px;
+  top: 15px;
+}
+
+.auth-ico-google {
+  position: absolute;
+  left: 85px;
+  top: 15px;
 }
 
 .auth-rules {

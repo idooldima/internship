@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ReactComponent as Facebook } from '../../../../assets/logo-facebook.svg';
+import { ReactComponent as Google } from '../../../../assets/logo-google.svg';
 import {
   Button,
   Col,
@@ -187,12 +189,14 @@ export default function SignUp() {
             <Col className="or-pseudo">or</Col>
           </Row>
           <Row className="justify-content-center">
-            <Col sm={10}>
+            <Col sm={10} className='position-relative'>
+              <Facebook className='auth-ico-facebook' />
               <Button className="auth-btn-facebook">Continue with Facebook</Button>
             </Col>
           </Row>
           <Row className="justify-content-center pt-4">
-            <Col sm={10}>
+            <Col sm={10} className='position-relative'>
+              <Google className='auth-ico-google' />
               <Button className="auth-btn-google">Continue with Google</Button>
             </Col>
           </Row>

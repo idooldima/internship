@@ -6,6 +6,7 @@ import {
   FormGroup,
   Input,
   Modal,
+  ModalBody,
   ModalFooter,
   ModalHeader,
   Row,
@@ -13,6 +14,8 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { closeModal, openModal } from 'src/store/modals/actions';
 import { Link } from 'react-router-dom';
+import { ReactComponent as Facebook } from '../../../../assets/logo-facebook.svg';
+import { ReactComponent as Google } from '../../../../assets/logo-google.svg';
 import { useState } from 'react';
 import * as yup from 'yup';
 import { isOpenModal } from 'src/store/modals/selectors';
@@ -54,75 +57,80 @@ export default function SignIn() {
             <p>Login with your email & password</p>
           </Col>
         </ModalHeader>
-        <Form className="justify-content-center">
-          <FormGroup row className="justify-content-center">
+        {/* <ModalBody> */}
+          <Form className="justify-content-center">
+            <FormGroup row className="justify-content-center">
+              <Col sm={10}>
+                <Input
+                  className="auth-input "
+                  onChange={({ target: { value } }) => {
+                    setState({ ...state, email: value });
+                    schema
+                      .validateAt('email', { email: value })
+                      .then(() => setValidateState({ ...validateState, errEmail: '' }))
+                      .catch(function (err) {
+                        setValidateState({ ...validateState, errEmail: err.errors[0] });
+                      });
+                  }}
+                  invalid={!!validateState.errEmail}
+                  name="email"
+                  placeholder="this is focused input (for email)"
+                  type="email"
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup row className="justify-content-center">
+              <Col sm={10}>
+                <Input
+                  className="auth-input "
+                  onChange={({ target: { value } }) => {
+                    setState({ ...state, password: value });
+                    schema
+                      .validateAt('password', { password: value })
+                      .then(() => setValidateState({ ...validateState, errPassword: '' }))
+                      .catch(function (err) {
+                        setValidateState({ ...validateState, errPassword: err.errors[0] });
+                      });
+                  }}
+                  invalid={!!validateState.errPassword}
+                  name="password"
+                  placeholder="this is value (for password)"
+                  type="password"
+                />
+              </Col>
+            </FormGroup>
+          </Form>
+          <Row className="justify-content-center py-4">
             <Col sm={10}>
-              <Input
-                className="auth-input "
-                onChange={({ target: { value } }) => {
-                  setState({ ...state, email: value });
-                  schema
-                    .validateAt('email', { email: value })
-                    .then(() => setValidateState({ ...validateState, errEmail: '' }))
-                    .catch(function (err) {
-                      setValidateState({ ...validateState, errEmail: err.errors[0] });
-                    });
-                }}
-                invalid={!!validateState.errEmail}
-                name="email"
-                placeholder="this is focused input (for email)"
-                type="email"
-              />
+              <Button className="auth-btn-green">Continue</Button>
             </Col>
-          </FormGroup>
-          <FormGroup row className="justify-content-center">
-            <Col sm={10}>
-              <Input
-                className="auth-input "
-                onChange={({ target: { value } }) => {
-                  setState({ ...state, password: value });
-                  schema
-                    .validateAt('password', { password: value })
-                    .then(() => setValidateState({ ...validateState, errPassword: '' }))
-                    .catch(function (err) {
-                      setValidateState({ ...validateState, errPassword: err.errors[0] });
-                    });
-                }}
-                invalid={!!validateState.errPassword}
-                name="password"
-                placeholder="this is value (for password)"
-                type="password"
-              />
+          </Row>
+          <Row className="align-center auth-relative ">
+            <Col className="or-pseudo">or</Col>
+          </Row>
+          <Row className="justify-content-center">
+            <Col sm={10} className='position-relative'>
+              <Facebook className='auth-ico-facebook' />
+              <Button className="auth-btn-facebook">Continue with Facebook</Button>
             </Col>
-          </FormGroup>
-        </Form>
-        <Row className="justify-content-center py-4">
-          <Col sm={10}>
-            <Button className="auth-btn-green">Continue</Button>
-          </Col>
-        </Row>
-        <Row className="align-center auth-relative ">
-          <Col className="or-pseudo">or</Col>
-        </Row>
-        <Row className="justify-content-center">
-          <Col sm={10}>
-            <Button className="auth-btn-facebook">Continue with Facebook</Button>
-          </Col>
-        </Row>
-        <Row className="justify-content-center pt-4">
-          <Col sm={10}>
-            <Button className="auth-btn-google">Continue with Google</Button>
-          </Col>
-        </Row>
-        <Row className="align-center pt-4 pb-4">
-          <Col>
-            Don’t have account yet?{' '}
-            <Link className="auth_link" to={'/'} onClick={onOpenModal}>
-              Sign Up
-            </Link>
-          </Col>
-        </Row>
+          </Row>
+          <Row className="justify-content-center pt-4">
+            <Col sm={10} className='position-relative'>
+              <Google className='auth-ico-google' />
+              <Button className="auth-btn-google">Continue with Google</Button>
+            </Col>
+          </Row>
+          <Row className="align-center pt-4 pb-4">
+            <Col>
+              Don’t have account yet?{' '}
+              <Link className="auth_link" to={'/'} onClick={onOpenModal}>
+                Sign Up
+              </Link>
+            </Col>
+          </Row>
+        {/* </ModalBody> */}
       </Container>
+
       <ModalFooter className="justify-content-center auth-footer">
         <p>
           Forgot your password?{' '}
